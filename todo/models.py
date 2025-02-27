@@ -5,7 +5,7 @@ from django.core.validators import RegexValidator
 class User(AbstractUser):
     phone_regex = RegexValidator(
         regex=r"^\+996\d{9}$",
-        message="Номер телефона который вы вводите должен быть в формате +996 XXX XXX (6 цифр после +996)"
+        message="Номер телефона который вы вводите должен быть в формате +996 XXX XXX XXX (9 цифр после +996 )"
     )
     phone_number = models.CharField(
         max_length=13,

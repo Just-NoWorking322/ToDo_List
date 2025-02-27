@@ -21,4 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/", include("todo.urls")),
 ]
-'''подключаем routes приложение todo'''
+'''подключаем роуты приложения todo'''
