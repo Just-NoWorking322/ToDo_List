@@ -3,6 +3,15 @@ from django.contrib.auth import get_user_model
 from .serializers import UserSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from rest_framework import generics
+from rest_framework.permissions import AllowAny
+from .models import User
+from .serializers import UserSerializer
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [AllowAny]
 
 User = get_user_model()
 
